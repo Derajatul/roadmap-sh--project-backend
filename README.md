@@ -9,6 +9,7 @@ This repository contains a collection of backend projects and CLI tools as part 
 A command-line interface to fetch and display the recent activity of a GitHub user.
 
 - **Location:** `./github-user-activity`
+- **Roadmap.sh Project:** [GitHub User Activity](https://roadmap.sh/projects/github-user-activity)
 - **Tech Stack:** Node.js
 - **Key Features:** Fetches event data from the GitHub API and formats it for terminal output.
 
@@ -17,6 +18,7 @@ A command-line interface to fetch and display the recent activity of a GitHub us
 A CLI tool to fetch movie information (popular, now playing, top rated, etc.) from The Movie Database (TMDB) API.
 
 - **Location:** `./tmdb-cli-tool`
+- **Roadmap.sh Project:** [TMDB CLI Tool](https://roadmap.sh/projects/tmdb-cli)
 - **Tech Stack:** Node.js, Commander, Dotenv
 - **Key Features:** Supports various query types using command-line arguments and handles API authentication via environment variables.
 
