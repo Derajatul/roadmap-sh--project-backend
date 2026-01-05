@@ -1,47 +1,63 @@
 # GitHub User Activity CLI
 
-A simple CLI tool to fetch and display the recent activity of a GitHub user.
+A simple Command-Line Interface (CLI) to fetch and display the recent activity of a GitHub user. This project is part of the [roadmap.sh](https://roadmap.sh/projects/github-user-activity) challenges.
 
 ## Features
 
-- Fetches recent events for a given GitHub username.
-- Supports activity types like Push, Issues, Star (Watch), Fork, and Create.
-- Displays timestamps and readable action descriptions.
+- Fetches recent events for a given GitHub username from the GitHub API.
+- Supports activity types:
+  - **PushEvent**: Logs when a user pushes to a repository.
+  - **CreateEvent**: Logs when a user creates a branch or tag.
+  - **DeleteEvent**: Logs when a user deletes a branch or tag.
+- Simplified output for quick status checking.
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/) installed on your machine.
+- [Node.js](https://nodejs.org/) (v18 or higher recommended for native `fetch` support).
 
 ## Setup
 
 1. Navigate to the project directory:
+
    ```bash
    cd github-user-activity
    ```
-2. (Optional) Initialize npm if needed, though this project currently uses native `fetch` and has no external dependencies:
+
+2. (Optional) Link the command locally:
    ```bash
-   npm install
+   npm link
    ```
 
 ## Usage
 
-Run the script using Node.js and provide a GitHub username as an argument:
+You can run the script directly with Node or use the linked command.
+
+### Using Node
 
 ```bash
 node index.js <username>
 ```
 
+### Using Linked Command
+
+If you ran `npm link`, you can use:
+
+```bash
+github-activity <username>
+```
+
 ### Example
 
 ```bash
-node index.js octocat
+github-activity octocat
 ```
 
-Output:
+**Output:**
 
 ```text
-2023-10-27T12:00:00Z - Pushed 1 commit to octocat/Spoon-Knife
-2023-10-26T15:30:00Z - Starred octocat/Spoon-Knife
+Pushed to octocat/Spoon-Knife
+Created branch master
+Another event
 ```
 
 ## License
