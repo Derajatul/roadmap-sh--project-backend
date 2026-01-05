@@ -22,6 +22,15 @@ A CLI tool to fetch movie information (popular, now playing, top rated, etc.) fr
 - **Tech Stack:** Node.js, Commander, Dotenv
 - **Key Features:** Supports various query types using command-line arguments and handles API authentication via environment variables.
 
+### 3. Task Tracker CLI
+
+A CLI tool to track your tasks and manage your to-do list.
+
+- **Location:** `./task-tracker`
+- **Roadmap.sh Project:** [Task Tracker](https://roadmap.sh/projects/task-tracker)
+- **Tech Stack:** Node.js, Commander
+- **Key Features:** Supports adding, updating, deleting, and marking tasks as "in-progress" or "done". Lists tasks by status.
+
 ## Getting Started
 
 1. **Clone the repository:**
