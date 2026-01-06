@@ -31,6 +31,15 @@ A CLI tool to track your tasks and manage your to-do list.
 - **Tech Stack:** Node.js, Commander
 - **Key Features:** Supports adding, updating, deleting, and marking tasks as "in-progress" or "done". Lists tasks by status.
 
+### 4. Expense Tracker CLI
+
+A command-line interface to track and manage your daily expenses.
+
+- **Location:** `./expense-tracker`
+- **Roadmap.sh Project:** [Expense Tracker](https://roadmap.sh/projects/expense-tracker)
+- **Tech Stack:** Node.js, Commander
+- **Key Features:** Add expenses, list all records, summary total or by month, and delete entries by ID.
+
 ## Getting Started
 
 1. **Clone the repository:**
