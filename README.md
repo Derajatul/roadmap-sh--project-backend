@@ -40,6 +40,15 @@ A command-line interface to track and manage your daily expenses.
 - **Tech Stack:** Node.js, Commander
 - **Key Features:** Add expenses, list all records, summary total or by month, and delete entries by ID.
 
+### 5. Number Guessing Game CLI
+
+A simple interactive game to guess a random number between 1 and 100 with different difficulty levels.
+
+- **Location:** `./number-guessing-game`
+- **Roadmap.sh Project:** [Number Guessing Game](https://roadmap.sh/projects/number-guessing-game)
+- **Tech Stack:** Node.js
+- **Key Features:** Multiple difficulty levels, random number generation, and interactive terminal feedback.
+
 ## Getting Started
 
 1. **Clone the repository:**
