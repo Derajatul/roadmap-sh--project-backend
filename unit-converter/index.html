@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unit Converter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <header class="app-header">
+        <h1>Unit Converter</h1>
+        <nav class="category-tabs">
+          <button class="tab-item active">Length</button>
+          <button class="tab-item">Weight</button>
+          <button class="tab-item">Temperature</button>
+        </nav>
+      </header>
+
+      <main class="converter-content">
+        <!-- Input Card -->
+        <section class="converter-card" id="input-section">
+          <div class="input-group">
+            <label>Enter the length to convert</label>
+            <input type="number" id="input-value" placeholder="" />
+          </div>
+
+          <div class="input-group">
+            <label id="label-unit-from">Unit to Convert from</label>
+            <select id="unit-from">
+              <optgroup label="Length" class="unit-group active">
+                <option value="millimeter" selected>Millimeter (mm)</option>
+                <option value="centimeter">Centimeter (cm)</option>
+                <option value="meter">Meter (m)</option>
+                <option value="kilometer">Kilometer (km)</option>
+                <option value="inch">Inch (in)</option>
+                <option value="foot">Foot (ft)</option>
+                <option value="yard">Yard (yd)</option>
+                <option value="mile">Mile (mi)</option>
+              </optgroup>
+              <optgroup label="Weight" class="unit-group">
+                <option value="milligram">Milligram (mg)</option>
+                <option value="gram">Gram (g)</option>
+                <option value="kilogram">Kilogram (kg)</option>
+                <option value="ounce">Ounce (oz)</option>
+                <option value="pound">Pound (lb)</option>
+              </optgroup>
+              <optgroup label="Temperature" class="unit-group">
+                <option value="celsius">Celsius (°C)</option>
+                <option value="fahrenheit">Fahrenheit (°F)</option>
+                <option value="kelvin">Kelvin (K)</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label id="label-unit-to">Unit to Convert to</label>
+            <select id="unit-to">
+              <optgroup label="Length" class="unit-to-group active">
+                <option value="millimeter" selected>Millimeter (mm)</option>
+                <option value="centimeter">Centimeter (cm)</option>
+                <option value="meter">Meter (m)</option>
+                <option value="kilometer">Kilometer (km)</option>
+                <option value="inch">Inch (in)</option>
+                <option value="foot">Foot (ft)</option>
+                <option value="yard">Yard (yd)</option>
+                <option value="mile">Mile (mi)</option>
+              </optgroup>
+              <optgroup label="Weight" class="unit-to-group">
+                <option value="milligram">Milligram (mg)</option>
+                <option value="gram">Gram (g)</option>
+                <option value="kilogram">Kilogram (kg)</option>
+                <option value="ounce">Ounce (oz)</option>
+                <option value="pound">Pound (lb)</option>
+              </optgroup>
+              <optgroup label="Temperature" class="unit-to-group">
+                <option value="celsius">Celsius (°C)</option>
+                <option value="fahrenheit">Fahrenheit (°F)</option>
+                <option value="kelvin">Kelvin (K)</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <button class="btn btn-primary" id="convert-btn">Convert</button>
+        </section>
+
+        <!-- Result Card (Hidden by default) -->
+        <section
+          class="converter-card result-card"
+          id="result-section"
+          style="display: none"
+        >
+          <p class="result-label">Result of your calculation</p>
+          <div class="result-display" id="result-display">20 ft = 609cm</div>
+          <button class="btn btn-secondary" id="reset-btn">Reset</button>
+        </section>
+      </main>
+      <script src="script.js"></script>
+    </div>
+  </body>
+</html>

@@ -49,6 +49,15 @@ A simple interactive game to guess a random number between 1 and 100 with differ
 - **Tech Stack:** Node.js
 - **Key Features:** Multiple difficulty levels, random number generation, and interactive terminal feedback.
 
+### 6. Unit Converter (Web)
+
+A modern web application to convert various units of length, weight, and temperature.
+
+- **Location:** `./unit-converter`
+- **Roadmap.sh Project:** [Unit Converter](https://roadmap.sh/projects/unit-converter)
+- **Tech Stack:** HTML, CSS, JavaScript
+- **Key Features:** Real-time conversion, dynamic UI updates, and multiple unit support.
+
 ## Getting Started
 
 1. **Clone the repository:**
