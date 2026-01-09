@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Article - Personal Blog</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>New Article</h1>
+        <nav class="nav-links">
+          <a href="/admin" class="btn btn-secondary">Cancel</a>
+        </nav>
+      </header>
+
+      <main class="card">
+        <form action="/new" method="POST">
+          <div class="form-group">
+            <label for="title">Article Title</label>
+            <input
+              type="text"
+              name="title"
+              placeholder="Enter title..."
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="content">Content</label>
+            <textarea name="content" placeholder="Write your story here...">
+            </textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn">Submit</button>
+            <a href="/admin" class="btn btn-secondary">Discard</a>
+          </div>
+        </form>
+      </main>
+    </div>
+  </body>
+</html>

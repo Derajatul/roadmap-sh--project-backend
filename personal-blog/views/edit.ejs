@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Article - Personal Blog</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Update Article</h1>
+        <nav class="nav-links">
+          <a href="/admin" class="btn btn-secondary">Cancel</a>
+        </nav>
+      </header>
+
+      <main class="card">
+        <form action="/edit/<%= blog.id %>" method="POST">
+          <div class="form-group">
+            <label for="title">Article Title</label>
+            <input
+              type="text"
+              name="title"
+              value="<%= blog.title %>"
+              placeholder="Enter title..."
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="content">Content</label>
+            <textarea name="content" placeholder="Write your story here...">
+<%= blog.content %>
+            </textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn">Update</button>
+            <a href="/admin" class="btn btn-secondary">Discard</a>
+          </div>
+        </form>
+      </main>
+    </div>
+  </body>
+</html>

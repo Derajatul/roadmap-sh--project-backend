@@ -58,6 +58,15 @@ A modern web application to convert various units of length, weight, and tempera
 - **Tech Stack:** HTML, CSS, JavaScript
 - **Key Features:** Real-time conversion, dynamic UI updates, and multiple unit support.
 
+### 7. Personal Blog (Web)
+
+A simple blog application with an admin interface for managing articles.
+
+- **Location:** `./personal-blog`
+- **Roadmap.sh Project:** [Personal Blog](https://roadmap.sh/projects/personal-blog)
+- **Tech Stack:** Node.js, Express, EJS
+- **Key Features:** View articles, admin panel for CRUD operations, and persistent storage using JSON.
+
 ## Getting Started
 
 1. **Clone the repository:**

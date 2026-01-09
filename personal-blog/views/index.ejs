@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Personal Blog</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Personal Blog</h1>
+        <nav class="nav-links">
+          <a href="/" class="btn btn-secondary">Home</a>
+          <a href="/admin" class="btn btn-secondary">Admin</a>
+        </nav>
+      </header>
+
+      <main class="article-list">
+        <% blogs.forEach(blog => { %>
+        <a href="/articles/<%= blog.id %>" class="article-item">
+          <span class="article-title"><%= blog.title %></span>
+          <span class="article-date"><%= blog.date %></span>
+        </a>
+        <% }) %>
+      </main>
+    </div>
+  </body>
+</html>

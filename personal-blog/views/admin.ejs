@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard - Personal Blog</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Personal Blog</h1>
+        <a href="/new" class="btn">+ Add Article</a>
+      </header>
+
+      <main class="card">
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th style="text-align: right">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% blogs.forEach(blog => { %>
+            <tr>
+              <td class="article-title"><%= blog.title %></td>
+              <td class="actions" style="justify-content: flex-end">
+                <a
+                  href="/edit/<%= blog.id %>"
+                  style="color: var(--accent-color); font-weight: 600"
+                  >Edit</a
+                >
+                <button
+                  type="submit"
+                  style="color: #ef4444; font-weight: 600"
+                  onclick="deleteBlog('<%= blog.id %>')"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+        <div style="margin-top: 2rem">
+          <a href="/" class="btn btn-secondary">Logout</a>
+        </div>
+      </main>
+    </div>
+  </body>
+  <script>
+    async function deleteBlog(id) {
+      await fetch(`/delete/${id}`, {
+        method: "DELETE",
+      });
+
+      window.location.href = "/admin";
+    }
+  </script>
+</html>
