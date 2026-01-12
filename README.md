@@ -67,6 +67,15 @@ A simple blog application with an admin interface for managing articles.
 - **Tech Stack:** Node.js, Express, EJS
 - **Key Features:** View articles, admin panel for CRUD operations, and persistent storage using JSON.
 
+### 8. Weather API
+
+A backend service that fetches and caches weather data using Redis.
+
+- **Location:** `./weather-api`
+- **Roadmap.sh Project:** [Weather API](https://roadmap.sh/projects/weather-api-project)
+- **Tech Stack:** Node.js, Express, Redis
+- **Key Features:** Redis caching, error handling, and Visual Crossing API integration.
+
 ## Getting Started
 
 1. **Clone the repository:**
