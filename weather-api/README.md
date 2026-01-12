@@ -69,4 +69,4 @@ GET http://localhost:3000/weather?city=jakarta
 
 ## Roadmap.sh Project
 
-This project is part of the [Weather API](https://roadmap.sh/projects/weather-api-project) challenge on roadmap.sh.
+This project is part of the [Weather API](https://roadmap.sh/projects/weather-api-wrapper-service) challenge on roadmap.sh.

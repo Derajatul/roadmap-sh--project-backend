@@ -72,7 +72,7 @@ A simple blog application with an admin interface for managing articles.
 A backend service that fetches and caches weather data using Redis.
 
 - **Location:** `./weather-api`
-- **Roadmap.sh Project:** [Weather API](https://roadmap.sh/projects/weather-api-project)
+- **Roadmap.sh Project:** [Weather API](https://roadmap.sh/projects/weather-api-wrapper-service)
 - **Tech Stack:** Node.js, Express, Redis
 - **Key Features:** Redis caching, error handling, and Visual Crossing API integration.
 
