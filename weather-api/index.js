@@ -1,15 +1,16 @@
 import express from "express";
 import dotenv from "dotenv";
+import rateLimit from "express-rate-limit";
 import { createClient } from "redis";
 
 dotenv.config();
 
 // Initialize Redis client
 const redisClient = createClient({
-  url: process.env.REDIS_URL || 'redis://localhost:6379'
+  url: process.env.REDIS_URL || "redis://localhost:6379",
 });
 
-redisClient.on('error', (err) => console.log('Redis Client Error', err));
+redisClient.on("error", (err) => console.log("Redis Client Error", err));
 
 // Connect to Redis
 await redisClient.connect();
@@ -53,7 +54,12 @@ const getWeather = async (city) => {
 
 const app = express();
 
-app.get("/weather", async (req, res) => {
+const weatherRateLimit = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // limit each IP to 100 requests per windowMs
+});
+
+app.get("/weather", weatherRateLimit, async (req, res) => {
   const city = req.query.city;
 
   if (!city) {
