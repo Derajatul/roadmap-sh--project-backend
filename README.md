@@ -85,6 +85,15 @@ A robust backend for a blogging platform with MySQL and Docker support.
 - **Tech Stack:** Node.js, Express, MySQL, Docker
 - **Key Features:** CRUD operations, MySQL JSON columns, Docker orchestration, and Adminer integration.
 
+### 10. GitHub Trending CLI
+
+A CLI tool to discover trending repositories on GitHub.
+
+- **Location:** `./github-trending-cli`
+- **Roadmap.sh Project:** [GitHub Trending CLI](https://roadmap.sh/projects/github-trending-cli) (Custom based on GitHub Search API)
+- **Tech Stack:** Node.js, Commander
+- **Key Features:** Filter by duration (day/week/month/year), limit results, and displays repo stats.
+
 ## Getting Started
 
 1. **Clone the repository:**
