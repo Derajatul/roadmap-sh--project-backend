@@ -76,6 +76,15 @@ A backend service that fetches and caches weather data using Redis.
 - **Tech Stack:** Node.js, Express, Redis
 - **Key Features:** Redis caching, error handling, and Visual Crossing API integration.
 
+### 9. Blogging Platform API
+
+A robust backend for a blogging platform with MySQL and Docker support.
+
+- **Location:** `./blogging-platform-api`
+- **Roadmap.sh Project:** [Blogging Platform API](https://roadmap.sh/projects/blogging-platform-api)
+- **Tech Stack:** Node.js, Express, MySQL, Docker
+- **Key Features:** CRUD operations, MySQL JSON columns, Docker orchestration, and Adminer integration.
+
 ## Getting Started
 
 1. **Clone the repository:**
