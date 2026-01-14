@@ -94,6 +94,15 @@ A CLI tool to discover trending repositories on GitHub.
 - **Tech Stack:** Node.js, Commander
 - **Key Features:** Filter by duration (day/week/month/year), limit results, and displays repo stats.
 
+### 11. Todo List API
+
+A backend for a Todo List application with PostgreSQL and Docker support.
+
+- **Location:** `./todo-list-api`
+- **Roadmap.sh Project:** [Todo List API](https://roadmap.sh/projects/todo-list-api)
+- **Tech Stack:** Node.js, Express, PostgreSQL, Docker
+- **Key Features:** User authentication (JWT/Argon2), CRUD operations for todos, Docker orchestration, and Adminer integration.
+
 ## Getting Started
 
 1. **Clone the repository:**
