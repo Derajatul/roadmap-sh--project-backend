@@ -36,18 +36,19 @@ route.post("/api/register", async (req, res) => {
     password: hashedPassword,
   };
 
-  const token = jwt.sign({ id: newUser.id }, process.env.JWT_SECRET);
-
   await pool.query(
     "INSERT INTO users (id, username, email, password) VALUES ($1, $2, $3, $4)",
     [newUser.id, newUser.username, newUser.email, newUser.password]
   );
 
+  const token = jwt.sign({ id: newUser.id }, process.env.JWT_SECRET, {
+    expiresIn: "1h",
+  });
+
   res.status(201).json({
     success: true,
     message: "User registered successfully",
     token,
-    user: newUser,
   });
 });
 
@@ -63,22 +64,23 @@ route.post("/api/login", async (req, res) => {
   ]);
 
   if (user.rows.length === 0) {
-    return res.status(400).json({ message: "User not found" });
+    return res.status(400).json({ message: "Invalid credentials" });
   }
 
   const validPassword = await argon2.verify(user.rows[0].password, password);
 
   if (!validPassword) {
-    return res.status(400).json({ message: "Invalid password" });
+    return res.status(400).json({ message: "Invalid credentials" });
   }
 
-  const token = jwt.sign({ id: user.rows[0].id }, process.env.JWT_SECRET);
+  const token = jwt.sign({ id: user.rows[0].id }, process.env.JWT_SECRET, {
+    expiresIn: "1h",
+  });
 
   res.status(200).json({
     success: true,
     message: "User logged in successfully",
     token,
-    user: user.rows[0],
   });
 });
 
