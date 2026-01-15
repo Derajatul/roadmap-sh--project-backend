@@ -103,6 +103,15 @@ A backend for a Todo List application with PostgreSQL and Docker support.
 - **Tech Stack:** Node.js, Express, PostgreSQL, Docker
 - **Key Features:** User authentication (JWT/Argon2), CRUD operations for todos, Docker orchestration, and Adminer integration.
 
+### 12. Expense Tracker API
+
+A backend for an Expense Tracker application with PostgreSQL, Prisma ORM, and Docker support.
+
+- **Location:** `./expenses-tracker-api`
+- **Roadmap.sh Project:** [Expense Tracker API](https://roadmap.sh/projects/expense-tracker-api)
+- **Tech Stack:** Node.js, Express, PostgreSQL, Prisma v7, Docker
+- **Key Features:** CRUD operations for expenses, Prisma v7 Driver Adapters, and Docker orchestration.
+
 ## Getting Started
 
 1. **Clone the repository:**

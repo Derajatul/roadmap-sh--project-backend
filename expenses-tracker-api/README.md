@@ -1,6 +1,15 @@
 # Expenses Tracker API
 
-Boilerplate API menggunakan **Node.js**, **Express**, **PostgreSQL**, dan **Prisma ORM** di dalam lingkungan **Docker**.
+This is a solution to the [Expense Tracker API project](https://roadmap.sh/projects/expense-tracker-api) from roadmap.sh.
+
+Boilerplate API ini dibangun menggunakan **Node.js**, **Express**, **PostgreSQL**, dan **Prisma ORM (v7)** di dalam lingkungan **Docker**.
+
+## Fitur Utama
+
+- **Express.js (v5)**: Framework web untuk Node.js.
+- **PostgreSQL**: Database relasional.
+- **Prisma v7**: ORM modern dengan Driver Adapters.
+- **Docker & Docker Compose**: Arsitektur containerized untuk pengembangan yang konsisten.
 
 ## Prasyarat
 
@@ -9,7 +18,7 @@ Boilerplate API menggunakan **Node.js**, **Express**, **PostgreSQL**, dan **Pris
 
 ## Cara Menjalankan Project
 
-1. **Clone project dan masuk ke folder:**
+1. **Masuk ke folder project:**
 
    ```bash
    cd expenses-tracker-api
@@ -19,66 +28,49 @@ Boilerplate API menggunakan **Node.js**, **Express**, **PostgreSQL**, dan **Pris
    ```bash
    docker-compose up --build
    ```
-   _Perintah ini akan membangun image, menjalankan container database, dan menjalankan aplikasi Node.js._
+   _Perintah ini akan membangun image Node.js, menjalankan container database PostgreSQL, dan menghubungkan keduanya._
 
-## Manajemen Database (Prisma)
+## Manajemen Database (Prisma v7)
 
-Karena aplikasi berjalan di dalam Docker, perintah Prisma harus dijalankan melalui container atau disesuaikan dengan koneksi environment.
+Konfigurasi Prisma v7 menggunakan file `prisma.config.ts` dan Driver Adapter untuk koneksi database.
 
-### 1. Inisialisasi Database (Pertama Kali)
+### 1. Inisialisasi & Sync Database
 
-Saat pertama kali dijalankan, `Dockerfile` sudah diatur untuk menjalankan `npx prisma db push`. Ini akan:
-
-- Sinkronisasi schema Prisma dengan database.
-- Membuat tabel jika belum ada.
-
-Jika Anda ingin melakukannya secara manual dari host (komputer Anda):
+Secara default, project akan menjalankan `prisma db push` setiap kali container dijalankan. Untuk menjalankan manual:
 
 ```bash
-# Pastikan container berjalan
 docker-compose exec app npx prisma db push
 ```
 
-### 2. Memperbarui Tabel (Setelah Mengedit `schema.prisma`)
+### 2. Memperbarui Schema
 
-Setiap kali Anda mengubah file `prisma/schema.prisma` (misalnya menambah field atau model baru):
+Setiap kali Anda mengubah `prisma/schema.prisma`:
 
-1. **Sinkronisasi Schema ke DB:**
-
+1. **Push perubahan:**
    ```bash
    docker-compose exec app npx prisma db push
    ```
-
-   _Gunakan `db push` untuk prototyping cepat. Jika ingin menggunakan sistem migration yang mencatat sejarah perubahan, gunakan `migrate dev`._
-
-2. **Generate Ulang Prisma Client:**
-   Prisma Client perlu di-generate ulang agar autocomplete di kode (IntelliSense) mendeteksi field baru.
+2. **Generate Client:**
    ```bash
    docker-compose exec app npx prisma generate
    ```
 
-### 3. Menggunakan Prisma Studio (GUI)
+### 3. Prisma Studio (GUI)
 
-Prisma Studio adalah aplikasi web untuk melihat dan mengedit data di database secara visual.
+Gunakan antarmuka visual untuk mengelola data:
 
 ```bash
 docker-compose exec app npx prisma studio
 ```
 
-Lalu buka `http://localhost:5555` di browser Anda.
+Buka: [http://localhost:5555](http://localhost:5555)
 
-## Akses API
+## API Endpoints
 
-- **Base URL**: `http://localhost:3000`
-- **Health Check**: `http://localhost:3000/`
-- **DB Test**: `http://localhost:3000/db-test`
+- **Health Check**: `GET http://localhost:3000/`
+- **DB Connection Test**: `GET http://localhost:3000/db-test` (Cek status koneksi Prisma)
+- **Create Expense**: `POST http://localhost:3000/expenses`
 
-## Troubleshooting
+## URL Project
 
-Jika database belum siap saat aplikasi dijalankan, aplikasi mungkin akan error dan berhenti. Cukup jalankan kembali:
-
-```bash
-docker-compose up
-```
-
-Database PostgreSQL biasanya membutuhkan waktu beberapa detik untuk benar-benar siap menerima koneksi pada saat pertama kali dibuat.
+[https://roadmap.sh/projects/expense-tracker-api](https://roadmap.sh/projects/expense-tracker-api)
